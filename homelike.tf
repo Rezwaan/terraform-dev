@@ -19,6 +19,11 @@ provider "aws" {
   profile = "homelike"
   region  = "us-east-1"
   shared_credentials_file = "~/.aws/credentials"
+  assume_role {
+    role_arn     = "arn:aws:iam::848854301277:role/terraform-sts"
+    session_name = "home-like-dev"
+  }
+  
 }
 
 

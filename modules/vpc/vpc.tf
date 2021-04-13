@@ -1,5 +1,5 @@
 # create the VPC
-resource "aws_vpc" "homelike-vpc" {
+resource "aws_vpc" "homelike-dev-vpc" {
   cidr_block           = var.vpc_cidr_block
   instance_tenancy     = "default" 
   enable_dns_support   = var.vpc_dns_support
