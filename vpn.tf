@@ -2,11 +2,11 @@
 # RESOURCES
 ##################################################################################
 
-resource "aws_instance" "vpn-server" {
+resource "aws_instance" "mongodb_primary" {
     availability_zone = "${var.region}a"
 
     tags = {
-        Name = "Vpn Server"
+        Name = "${var.environment}-mongodb-one"
     }
 
     ami = data.aws_ami.ubuntu.id
@@ -29,7 +29,7 @@ resource "aws_instance" "vpn-server" {
 
     associate_public_ip_address = false
     
-    user_data                   = data.template_file.mongo-db-userdata.rendered
+    user_data                   = data.template_file.openvpn-userdata.rendered
 
     key_name = aws_key_pair.homelike-key-pair.key_name
 }

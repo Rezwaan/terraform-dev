@@ -14,6 +14,14 @@ data "template_file" "node-userdata" {
   }
 }
 
+data "template_file" "openvpn-userdata" {
+  template = file("templates/openvpn/userdata.sh")
+
+  vars = {
+    playbook_repository = var.playbook_repository
+  }
+}
+
 data "template_file" "mongo-db-userdata" {
   template = file("templates/mongo-db/userdata.sh")
 
