@@ -4,8 +4,8 @@ variable eip_id {
 }
 
 variable public_subnet {
-  type    = list
-  default = ["10.0.1.0/24","10.0.2.0/24","10.0.3.0/24"]
+  type    = string
+  default = "10.0.1.0/24"
 }
 
 variable depend_on {
